@@ -15,13 +15,12 @@
     <title>{% block title %}PaddleHeads{% endblock title %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    	<a class="navbar-brand" href="{% url 'home' %}">Missoula PaddleHeads</a>
-		{% if user.is_authenticated %}
+  <nav class="navbar navbar-light" style="background-color: #00483a">
+      	<a class="navbar-brand" href="{% url 'home' %}">Missoula PaddleHeads</a>
 	  		<ul class="navbar-nav mr-auto">
 				<li class="nav-item"><a href="{% url 'roster_list' %}">View Roster</a></li>
 			</ul>
-		{% endif %}		
+	
       <button class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#navbarCollapse" aria-controls="navbarCollapse"
       aria-expanded="false" aria-label="Toggle navigation">
@@ -56,6 +55,9 @@
       {% endif %}
     </div>
   </nav>
+  <p>
+  	<a href="https://www.milb.com/missoula">Vist the Official PaddleHeads Website Here</a>
+  </p>
   <div class="container">
     {% block content %}
     {% endblock content %}
