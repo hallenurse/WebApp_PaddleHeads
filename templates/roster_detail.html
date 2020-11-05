@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class="roster-entry">
-	<h2>{{ object.name }}</h2>
-		<p>by {{ object.author }} </p>
-		<p>{{ object.profile }}</p>
+	<h2>{{ object.name }} &middot; # {{ object.number }}</h2>
+		<p>Posted by: {{ object.author }} </p>
+		<span class="font-weight-bold">Batting Average:   </span>
+					{{ roster.batting_average }}
+		
+		<p><span class="font-weight-bold">Player Profile:   </span>
+					 {{ object.profile }}</p>
 	</div>
 	<p><a href="{% url 'roster_edit' roster.pk %}">Edit</a> |
-		<a href='{% url 'roster_delete' roster.pk %}">Delete</a></p>
+		<a href="{% url 'roster_delete' roster.pk %}">Delete</a></p>
 	<p>Back to <a href="{% url 'roster_list' %}">All Players</a>.</p>
 {% endblock content %}

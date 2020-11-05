@@ -1,17 +1,22 @@
 {% extends 'base.html' %}
 {% block title %}PaddleHeads Roster{% endblock title %}
 {% block content %}
-	{% for article in object_list %}
+	{% for roster in object_list %}
 		<div class="card">
 			<div class="card-header">
-				<span class="font-weight-bold">{{ roster.name }}</span> &middot;
-				<span class="text-muted">by {{ roster.author}} 
+				<a href="{% url 'roster_detail' roster.pk %}"><span class="font-weight-bold">{{ roster.name }}</span></a> &middot;
+				<span class="font-weight-bold"># {{ roster.number}} 
 			</div>
 			<div class="card-body">
-				<p>{{ roster.profile }}</p>
+				<p>
+					<span class="font-weight-bold">Batting Average: </span>
+					{{ roster.batting_average }}
+				</p>
 			</div>
-				<a href="{% url 'roster_edit' roster.pk %}">Edit</a> |
-				<a href="{% url 'roster_delete' roster.pk %}">Delete</a>
+			<p align="right">
+				<a href="{% url 'roster_edit' roster.pk %}">Edit Player's Info</a> |  
+				<a href="{% url 'roster_delete' roster.pk %}">Delete Player</a>
+				</p>
 			</div>
 			<div class="card-footer">
 				{% for comment in roster.comments.all %}
