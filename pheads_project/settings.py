@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'pages.apps.PagesConfig',
     'roster.apps.RosterConfig',
+    'schedule.apps.ScheduleConfig',
 ]
+
+TIME_ZONE = 'America/Denver'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

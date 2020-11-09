@@ -13,7 +13,7 @@ class RosterDetailView(DetailView):
 
 class RosterUpdateView(UpdateView):
     model = Roster
-    fields = ('profile', 'batting_average',)
+    fields = ('profile', 'batting_average', 'position', 'picture',)
     template_name = 'roster_edit.html'
 
 class RosterDeleteView(DeleteView):
@@ -24,4 +24,5 @@ class RosterDeleteView(DeleteView):
 class RosterCreateView(CreateView):
     model = Roster
     template_name = 'roster_new.html'
-    fields = ('name', 'number', 'profile', 'batting_average', 'author',)
+    fields = ('name', 'number', 'profile', 'batting_average', 'position',
+              'picture', 'author',)

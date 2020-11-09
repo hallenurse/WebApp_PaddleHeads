@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% block title %}PaddleHeads Schedule{% endblock title %}
+{% block content %}
+	{% for schedule in object_list %}
+		<div class="card">
+			<div class="card-header">
+				<a href="{% url 'schedule_detail' schedule.pk %}"><span class="font-weight-bold">{{ schedule.title }}</span></a> 
+			</div>
+			<div class="card-body">
+				<p>
+					<span class="font-weight-bold">Date & Time:  </span>
+					{{ schedule.date }}<br>
+					<span class="font-weight-bold">Location: </span>
+					{{ schedule.location }} <br>
+					<span class="font-weight-bold">Opponent: </span>
+					{{ schedule.opponent }} <br>
+					
+				</p>
+			</div>
+			<p align="right">
+				<a href="{% url 'schedule_edit' schedule.pk %}">Edit Game Info</a> |  
+				<a href="{% url 'schedule_delete' schedule.pk %}">Delete Game</a>
+				</p>
+			</div>
+			
+
+			
+		<br />
+	{% endfor %}
+{% endblock content %}
+		
+			

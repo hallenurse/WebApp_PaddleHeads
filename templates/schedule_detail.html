@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="schedule-entry">
+	<h2>{{ object.title }} </h2>
+		<p>
+		<span class="font-weight-bold">Date & Time:   </span>
+					{{ object.date }} <br>
+		<span class="font-weight-bold">Location:   </span>
+					{{ object.location }}<br>
+		<span class="font-weight-bold">Opponent:   </span>
+					 {{ object.opponent }}</p>
+	</div>
+	<p><a href="{% url 'schedule_edit' schedule.pk %}">Edit</a> |
+		<a href="{% url 'schedule_delete' schedule.pk %}">Delete</a></p>
+	<p>Back to <a href="{% url 'schedule_list' %}">Schedule</a>.</p>
+{% endblock content %}

@@ -12,6 +12,8 @@ class Roster(models.Model):
         get_user_model(),
         on_delete=models.CASCADE,
         )
+    position = models.CharField(max_length=255)
+    picture = models.ImageField()
 
     def __str__(self):
         return self.name
