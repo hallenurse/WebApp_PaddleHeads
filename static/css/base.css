@@ -1,4 +1,8 @@
 /* static/css/base.css */
+p4{
+	color: white !important;
+}
+
 a5 {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 25px;
@@ -9,6 +13,11 @@ p{
 }
 p2{
 	color: #F59B31 !important;
+}
+
+p3{
+	color: black !important;
+
 }
 nav {
 	
@@ -36,12 +45,12 @@ h2{
 }
 
 h3{
-	color: #F59B31 !important;
+	color: black !important;
 	font-size: 16px !important;
 	text-decoration: underline; 
 }
 h4{
-	color: black !important;
+	color: #F59B31 !important;
 	font-size: 20px !important;
 	text-decoration: underline !important;
 }
