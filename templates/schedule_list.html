@@ -6,21 +6,21 @@
 	{% for schedule in object_list %}
 		<div class="card">
 			<div class="card-header">
-				<span class="font-weight-bold">{{ schedule.title }}</span></a> 
+				<p><span class="font-weight-bold">{{ schedule.title }}</span></p></a> 
 			</div>
 			<div class="card-body">
-				<p>
+				<p3>
 					<span class="font-weight-bold">Date & Time:  </span>
 					{{ schedule.date }}<br>
 					<span class="font-weight-bold">Location: </span>
 					{{ schedule.location }} <br>
 					<span class="font-weight-bold">Opponent: </span>
 					{{ schedule.opponent }} <br></p>
-					<p align="right"><span class="font-weight-bold">Promotion: </span>
-					{{ schedule.promotion }} </p>
+					<p3 align="right"><span class="font-weight-bold">Promotion: </span>
+					{{ schedule.promotion }} </p3>
 					
 					
-				</p>
+				</p3>
 			</div>
 			{% if user.is_authenticated %}
 			<p align="right">

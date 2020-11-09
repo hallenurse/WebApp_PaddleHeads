@@ -7,18 +7,18 @@
 
 		<div class="card">
 			<div class="card-header">
-				<span class="font-weight-bold">{{ roster.name }}</span></a> &middot;
-				<span class="font-weight-bold"># {{ roster.number}} 
+				<span class="font-weight-bold"><p>{{ roster.name }}</span></a> &middot;
+				<span class="font-weight-bold"># {{ roster.number}} </p>
 			</div>
 			<div class="card-body">
-				<p>
+				<p3>
 					<span class="font-weight-bold">Position: </span>
 					{{ roster.position }}<br>
 					<span class="font-weight-bold">Batting Average: </span>
 					{{ roster.batting_average }}
 				<p align="right">
 				<a href="{% url 'roster_detail' roster.pk %}">Expand Player Details</p>	
-				</p>
+				</p3>
 			</div>
 			{% if user.is_authenticated %}
 			<p align="right">
@@ -27,14 +27,7 @@
 				</p>
 			{% endif %}
 			</div>
-			<div class="card-footer">
-				{% for comment in roster.comments.all %}
-					<p>
-						<span class="font-weight-bold">{{ comment.author }} &middot;</span>
-						{{ comment }}
-					</p>
-				{% endfor %}
-				</div>
+		
 			</div>
 
 		<br />
