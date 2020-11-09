@@ -4,7 +4,7 @@
 	{% for schedule in object_list %}
 		<div class="card">
 			<div class="card-header">
-				<a href="{% url 'schedule_detail' schedule.pk %}"><span class="font-weight-bold">{{ schedule.title }}</span></a> 
+				<span class="font-weight-bold">{{ schedule.title }}</span></a> 
 			</div>
 			<div class="card-body">
 				<p>
@@ -13,14 +13,20 @@
 					<span class="font-weight-bold">Location: </span>
 					{{ schedule.location }} <br>
 					<span class="font-weight-bold">Opponent: </span>
-					{{ schedule.opponent }} <br>
+					{{ schedule.opponent }} <br></p>
+					<p align="right"><span class="font-weight-bold">Promotion: </span>
+					{{ schedule.promotion }} </p>
+					
 					
 				</p>
 			</div>
+			{% if user.is_authenticated %}
 			<p align="right">
 				<a href="{% url 'schedule_edit' schedule.pk %}">Edit Game Info</a> |  
-				<a href="{% url 'schedule_delete' schedule.pk %}">Delete Game</a>
+				<a href="{% url 'schedule_delete' schedule.pk %}">Delete Game</a><br>
+
 				</p>
+				{% endif %}
 			</div>
 			
 

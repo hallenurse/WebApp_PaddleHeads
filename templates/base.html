@@ -15,11 +15,29 @@
     <title>{% block title %}PaddleHeads{% endblock title %}</title>
   </head>
   <body>
-  <nav class="navbar navbar-light" style="background-color: #F59B31">
-      	<a class="navbar-brand" href="{% url 'home' %}">Missoula PaddleHeads</a>
-	  		<ul class="navbar-nav mr-auto">
-				<li class="nav-item"><a href="{% url 'roster_list' %}">View Roster</a></li><br>
-				<li class="nav-item"><a href="{% url 'schedule_list' %}">View Schedule</a></li>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #F59B31">
+      	<a class="navbar-brand" href="{% url 'home' %}">
+	  		<img src="https://www.mlbstatic.com/team-logos/518.svg" width="60" height="60" class="d-inline-block align-top" alt="">
+			MISSOULA PADDLEHEADS</a>
+			<ul class="navbar-nav ">
+				<li class="nav-item">
+        			<a class="nav-link" href="{% url 'home' %}">Home</a>
+      			</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="{% url 'roster_list' %}">View Roster</a>
+      			</li>
+				<li class="nav-item">
+        			<a class="nav-link" href="{% url 'schedule_list' %}">View Schedule</a>
+      			</li>
+				{% if user.is_authenticated %}
+				<li class="nav-item dropdown">
+        			<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         				 Admin</a>
+        			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          				<a class="dropdown-item" href="{% url 'roster_new' %}">Add New Player</a>
+          				<a class="dropdown-item" href="{% url 'schedule_new' %}">Add New Game</a>    
+    			</li>
+				{% endif %}
 			</ul>
 	
       <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -56,7 +74,7 @@
       {% endif %}
     </div>
   </nav>
-  
+
   <div class="container">
     {% block content %}
     {% endblock content %}
@@ -74,4 +92,5 @@
   integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
   crossorigin="anonymous"></script>
   </body>
+  
 </html>
