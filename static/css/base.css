@@ -1,4 +1,78 @@
+/* static/css/base.css */
+a5 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 25px;
+
+}
+p{
+	color: #F59B31 !important;
+}
+p2{
+	color: #F59B31 !important;
+}
+nav {
+	
+}
 body {
 	font-family: 'Source Sans Pro', sans-serif;
 	font-size: 18px;
-}}
+	background-color: #00483A !important;
+}
+
+header {
+	border-bottom: 1px solid #999;
+	margin-bottom: 2rem;
+	display: flex;
+}
+
+h1 {
+	color: #F59B31 !important;
+	text-decoration: underline;
+	font-family: 'Source Sans Pro' sans-serif !important;
+}
+
+h2{
+	color: white !important;
+}
+
+h3{
+	color: #F59B31 !important;
+	font-size: 16px !important;
+	text-decoration: underline; 
+}
+h4{
+	color: black !important;
+	font-size: 20px !important;
+	text-decoration: underline !important;
+}
+.nav-left {
+	margin-right: auto;
+}
+
+.nav-right {
+	display: flex;
+	padding-top: 2rem;
+}
+
+.post-entry {
+	margin-bottom: 2rem;
+}
+
+.post-entry h2 {
+	margin: 0.5rem 0;
+}
+
+.post-entry h2 a,
+.post-entry h2 a:visited {
+	color: red !important;
+	text-decoration: none;
+}
+
+.post-entry p {
+	margin: 0;
+	font-weight: 400;
+}
+
+.post-entry h2 a:hover {
+	color: red;
+}

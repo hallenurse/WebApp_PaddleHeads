@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 {% block title %}PaddleHeads Roster{% endblock title %}
 {% block content %}
+<br>
+<h1 align="center">Missoula PaddleHeads Roster</h1>
 	{% for roster in object_list %}
 
 		<div class="card">
 			<div class="card-header">
-				<a href="{% url 'roster_detail' roster.pk %}"><span class="font-weight-bold">{{ roster.name }}</span></a> &middot;
+				<span class="font-weight-bold">{{ roster.name }}</span></a> &middot;
 				<span class="font-weight-bold"># {{ roster.number}} 
 			</div>
 			<div class="card-body">
@@ -13,8 +15,9 @@
 					<span class="font-weight-bold">Position: </span>
 					{{ roster.position }}<br>
 					<span class="font-weight-bold">Batting Average: </span>
-					{{ roster.batting_average }} <br>
-					
+					{{ roster.batting_average }}
+				<p align="right">
+				<a href="{% url 'roster_detail' roster.pk %}">Expand Player Details</p>	
 				</p>
 			</div>
 			{% if user.is_authenticated %}
@@ -33,7 +36,7 @@
 				{% endfor %}
 				</div>
 			</div>
-			
+
 		<br />
 	{% endfor %}
 {% endblock content %}

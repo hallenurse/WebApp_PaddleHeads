@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<br>
 <div class="roster-entry">
 	<h2>{{ object.name }} &middot; # {{ object.number }}</h2>
 		<p>Posted by: {{ object.author }} </p>
-		<span class="font-weight-bold">Position:   </span>
+		<p2><span class="font-weight-bold">Position:   </span>
 					{{ roster.position }} <br>
 		<span class="font-weight-bold">Batting Average:   </span>
-					{{ roster.batting_average }}
-		<p><span class="font-weight-bold">Player Profile:   </span>
+					{{ roster.batting_average }}</p2><br>
+		<br><p><span class="font-weight-bold">Player Profile:   </span>
 					 {{ object.profile }}</p>
 	</div>
 	{% if user.is_authenticated %}
